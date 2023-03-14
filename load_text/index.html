@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load text</title>
+</head>
+<body>
+    <div>
+        <button class="btn_click">Click to load random text</button>
+        <p id="result">Text will load here</p>
+    </div>
+
+    <script src="../script/jquery.js"></script>
+    <script>
+        // ajax to load the external text file
+        $(document).ready(function(){
+            $('.btn_click').click(() => {
+                $('#result').load('content.txt', ()=>{
+                    console.log("Data loaded successfully");
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX and JS</title>
+</head>
+<body>
+    <div class="container">
+        <button id="btn">Click to load</button>
+        <p id="result">Result will show here...</p>
+    </div>
+    <script src="../script/jquery.js"></script>
+    <script>
+        // get the button
+        const btn = document.getElementById('btn');
+        btn.addEventListener('click', loadContent);
+
+        // function to load the content
+        function loadContent() {
+            // create object
+            const xhr = new XMLHttpRequest();
+
+            // open method
+            xhr.open("GET", "content.txt", true);
+        
+            // function when request is ready
+            xhr.onreadystatechange = function() {
+                // check state and status
+                if(this.readyState == 4 && this.status == 200) {
+                    // insert response to the html
+                    document.getElementById('result').innerHTML = this.responseText;
+                }
+            }
+
+            // request send
+            xhr.send();
+        }
+        
+    </script>
+</body>
+</html>
