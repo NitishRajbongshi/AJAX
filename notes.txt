@@ -1,6 +1,7 @@
 AJAX runs on server side only. So, to run AJAX in the local machine there should be some local server like XAMPP.
 
 How AJAX Works
+--------------
 
 1. An event occurs in a web page (the page is loaded, a button is clicked)
 2. An XMLHttpRequest object is created by JavaScript
@@ -11,6 +12,7 @@ How AJAX Works
 7. Proper action (like page update) is performed by JavaScript
 
 The XMLHttpRequest Object
+-------------------------
 All modern browsers support the XMLHttpRequest object.
 
 The XMLHttpRequest object can be used to exchange data with a server behind the scenes. This means that it is possible to update parts of a web page, without reloading the whole page.
@@ -20,20 +22,59 @@ The XMLHttpRequest object is used to exchange data with a server.
 Send a Request To a Server
 To send a request to a server, we use the open() and send() methods of the XMLHttpRequest object:
 
-load() Method: 
+load() Method:
+-------------
 
 Used with jQuery.
 The load() method loads data from the server. The return data can be put in a selected DOM.
 syntax: $(selector).load(URL, DATA, callback)
 
 open() function:
+---------------
 The open(method, URL, async) function is used to open an external file, API and display to the web page.
 method: GET/POST
 url: any url to open
 async: true / false
 
 The onreadystatechange Property:
+-------------------------------
 The readyState property holds the status of the XMLHttpRequest.
 The onreadystatechange property defines a function to be executed when the readyState changes.
 
 The status property and the statusText property holds the status of the XMLHttpRequest object.
+
+
+GET and POST in jQuery
+----------------------
+HTTP Request: GET vs. POST
+Two commonly used methods for a request-response between a client and server are: GET and POST.
+
+GET - Requests data from a specified resource
+POST - Submits data be processed to a specified resource
+GET is basically used for just getting (retrieving) some data from the server. Note: The GET method may return cached data.
+
+A POST can also be used to get some data from the server. However, the POST method NEVER caches data and is often used to send data along with the request.
+
+jQuery $.get() Method
+---------------------
+The $.get() method requests data from the server with an HTTP GET request.
+
+Syntax:
+
+$.get(URL,callback);
+The required URL parameter specifies the URL you wish to request.
+
+The optional callback parameter is the name of a function to be executed if the request succeeds.
+
+jQuery $.post() Method
+----------------------
+The $.post() method requests data from the server using an HTTP POST request.
+
+Syntax:
+
+$.post(URL,data,callback);
+The required URL parameter specifies the URL you wish to request.
+
+The optional data parameter specifies some data to send along with the request.
+
+The optional callback parameter is the name of a function to be executed if the request succeeds.

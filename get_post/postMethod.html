@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get & Post</title>
+</head>
+<body>
+    <div>
+        <button id="click">Click for response</button>
+        <p id="res">Response will visible here...</p>
+    </div>
+    <script src="../script/jquery.js"></script>
+    <script>
+        $(document).ready(function() {
+            // load using POST method
+            $('#click').click(() => {
+                $.post("post.php", {
+
+                    name  : "Nitish Rajbongshi",
+                    email : "nitishrajbongshi@gmail.com"
+                    
+                }, (data, status) => {
+                    $('#res').html(data);
+                    console.log(status);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

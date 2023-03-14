@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get & Post</title>
+</head>
+<body>
+    <div>
+        <button id="click">Click for response</button>
+        <p id="res">Response will visible here...</p>
+    </div>
+    <script src="../script/jquery.js"></script>
+    <script>
+        $(document).ready(function() {
+            // load using GET method
+            $('#click').click(() => {
+                // $.get(url, callback)
+                $.get("content.txt", function(data, status) {
+                    $('#res').html(data); // insert into the html
+                    console.log(status); // success
+                });
+            });
+        });
+    </script>
+</body>
+</html>
